@@ -9,7 +9,7 @@ required_version = ">= 0.14.0"
   }
 
   cloud {
-    hostname = "ktpoc.terraform.poc"
+    hostname = "ktcloud.inside-terraform.com"
     organization = "Test_LABs"
     workspaces {
       name = "kt-poc"
