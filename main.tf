@@ -11,7 +11,9 @@ terraform {
   cloud {
     hostname     = "ktcloud.inside-terraform.com"
     organization = "ktcloud"
-    workspaces {name = "kt-poc"}
+    workspaces {
+      name = "kt-poc"
+    }
   }
 }
 
@@ -22,6 +24,19 @@ provider "openstack" {
   password    = var.password
   auth_url    = var.auth_url
   region      = var.region
+}
+
+provider "cloudstack" {
+  api_url    = var.cloudstack_api_url
+  api_key    = var.cloudstack_api_key
+  secret_key = var.cloudstack_secret_key
+}
+
+resource "cloudstack_instance" "web" {
+  name             = "instance_01"
+  service_offering = "small"
+  template         = "CentOS 7.9"
+  zone             = "KOR-Seoul M"
 }
 
 # Create a web server
