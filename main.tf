@@ -1,12 +1,6 @@
 # Define required providers
 terraform {
   required_version = ">= 0.14.0"
-  required_providers {
-    openstack = {
-      source  = "terraform-provider-openstack/openstack"
-      version = "~> 1.48.0"
-    }
-  }
 
   cloud {
     hostname     = "ktcloud.inside-terraform.com"
@@ -73,6 +67,7 @@ resource "openstack_compute_volume_attach_v2" "attached" {
 }
 
 ############ Cloud Stack Provider & Instance CODE ###############
+/* Cloud Stack Code Comment OUT.
 provider "cloudstack" {
   api_url    = var.cloudstack_api_url
   api_key    = var.cloudstack_api_key
@@ -94,7 +89,7 @@ resource "cloudstack_disk" "CS_Disk_01" {
   virtual_machine_id = cloudstack_instance.Cloud_Stack_Server.virtual_machine_id
   zone               = "zone-1"
 }
-
+*/
 # Create a web server
 /*
 resource "openstack_compute_instance_v2" "test-server" {
