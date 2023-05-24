@@ -1,6 +1,6 @@
 # Define required providers
 terraform {
-  required_version = ">= 0.14.0"
+required_version = ">= 0.14.0"
   required_providers {
     openstack = {
       source  = "terraform-provider-openstack/openstack"
@@ -9,8 +9,13 @@ terraform {
   }
 
   cloud {
+<<<<<<< HEAD
     hostname     = "ktcloud.inside-terraform.com"
     organization = "ktcloud"
+=======
+    hostname = "ktcloud.inside-terraform.com"
+    organization = "Test_LABs"
+>>>>>>> parent of 1e34dff (terraform fmt)
     workspaces {
       name = "kt-poc"
     }
@@ -18,13 +23,15 @@ terraform {
 }
 
 # Configure the OpenStack Provider
+/*
 provider "openstack" {
-  user_name   = var.user_name
-  tenant_name = var.tenant_name
-  password    = var.password
-  auth_url    = var.auth_url
-  region      = var.region
+  user_name   = "admin"
+  tenant_name = "admin"
+  password    = "pwd"
+  auth_url    = "http://myauthurl:5000/v2.0"
+  region      = "RegionOne"
 }
+<<<<<<< HEAD
 
 provider "cloudstack" {
   api_url    = var.cloudstack_api_url
@@ -39,9 +46,11 @@ resource "cloudstack_instance" "web" {
   zone             = "KOR-Seoul M"
 }
 
+=======
+*/
+>>>>>>> parent of 1e34dff (terraform fmt)
 # Create a web server
 /*
 resource "openstack_compute_instance_v2" "test-server" {
   # ...
-}
-*/
+}*/

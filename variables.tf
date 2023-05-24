@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Variables Declare & Assign
 variable "user_name" {
   type = string
@@ -23,3 +24,6 @@ variable "cloudstack_api_key" {
 variable "cloudstack_secret_key" {
   type = string
 }
+=======
+# Variables Declare & Assign
+>>>>>>> parent of 1e34dff (terraform fmt)
